@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="assets/css/style.css">
-<script src="assets/js/script.js"></script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
@@ -36,14 +36,9 @@
       </nav>
     <div class="container">
         <main class="mt-5 w-75">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item"><a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Aggiungi Prodotto </a></li>
-            <li class="nav-item"><a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Rimuovi Prodotto</a></li>
-            <li class="nav-item"><a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Modifica prodotto</a></li>
-            
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane p-4 fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+      
+          
+            <div class=" p-4 fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                 <form id="myForm">
                     <h1>Aggiungi un nuovo Prodotto</h1>
                     <div class="form-group">
@@ -66,7 +61,10 @@
                       <label for="price">Prezzo</label>
                       <input type="number" class="form-control" id="price" placeholder="Inserisci il prezzo">
                     </div>
+                
                     <button type="button" class="btn btn-primary mt-4">Invia</button>
+                    <button type="button" class="btn btn-secondary mt-4 ml-2">Reset</button>
+                    
                   </form>
                   <form id="deletorm">
                     <h1>Elimina un Prodotto</h1>  
@@ -83,23 +81,26 @@
 
 
 
-            </div>
-            <div class="tab-pane p-4 fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-                <form id="deletorm">
-                    <div class="form-group">
-                      <label for="name">Numero prodotto  oppure id esatto </label>
-                      <input type="text" class="form-control" id="idprod" placeholder="(es: '1' oppure '6579b4a67c0dd90018c938fa')">
+      
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          ...
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
                     </div>
-                    
-                    
-                    <button type="button" class="btn btn-danger">Invia</button>
-                  </form>
-
-                
-            </div>
-            <div class="tab-pane p-4 fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">Contenuto 3</div>
+                  </div>
            
-          </div>
+          
         </main>
 
 
@@ -111,6 +112,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>      
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>   
+    <script src="assets/js/script.js"></script>   
 </body>
 </html>
