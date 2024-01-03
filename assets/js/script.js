@@ -23,8 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
       .then(response => response.json())
       .then(json => {
+        listofdel(json)
         console.log(json)
-        let prodlist = document.querySelector('.prod-list')
+        if (window.location.pathname === "/index.html"){ let prodlist = document.querySelector('.prod-list')
         prodlist.textContent = ""
 
 
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                  
                   <p class="card-text">Prezzo: <span class="price">${json.price} Euro</span></p>
                   <p class="card-text">Brand: <span class="brand">${json.brand}</span></p>
-                  <a href="#" class="btn btn-primary">Acquista</a>
+                  
                   <button type="button" class="btn btn-primary btninfo" id="${json._id}" data-bs-toggle="modal" data-bs-target="#exampleModal">Maggiori info</button>
                 </div>
               </div></div>
@@ -59,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
           prodlist.appendChild(div)
 
-        });
+        });}
+       
       });
 
 
@@ -89,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
+ 
 
   document.querySelector('.btn-primary').addEventListener('click', () => { creaOggetto() })
   leggopai()
@@ -143,7 +145,7 @@ if (window.location.pathname === "/backoffice.html") {
   document.querySelector("form#myForm button.btn-secondary").addEventListener("click", () => { confirmReset() });
   document.querySelector("form#deletorm button ").addEventListener("click", () => { confirmdelete() });
 }
-
+if (window.location.pathname === "/index.html"){
 document.querySelector(".prod-list").addEventListener("click", (e) => {
   if (e.target.innerHTML === "Maggiori info") {
     console.log(e.target.id)
@@ -179,5 +181,21 @@ document.querySelector(".prod-list").addEventListener("click", (e) => {
           </div>`;
       });
   }
-});
+});}
+
+function listofdel (json){ 
+  
+  let delprdo = document.querySelector("div#deleteproduct")
+  delprdo.textContent=""
+  delprdo.classList ="d-flex"
+  json.forEach(element => {console.log("ciao")
+  let div = document.createElement("div")
+  div.classList ="col-3"
+  
+  div.innerHTML=`<div><img width ="80px"src="${element.imageUrl}"><p>${element.name} - id = <b> ${element._id}</b></p></div>`
+  delprdo.appendChild  (div)
+    
+  });
+  
+}
 
