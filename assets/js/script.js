@@ -183,19 +183,19 @@ document.querySelector(".prod-list").addEventListener("click", (e) => {
   }
 });}
 
-function listofdel (json){ 
+function listofdel (json){ if(window.location.pathname === "/backoffice.html"){let delprdo = document.querySelector("div#deleteproduct")
+delprdo.textContent=""
+delprdo.classList ="d-flex"
+json.forEach(element => {console.log("ciao")
+let div = document.createElement("div")
+div.classList ="col-3"
+
+div.innerHTML=`<div><img width ="80px"src="${element.imageUrl}"><p>${element.name} - id = <b> ${element._id}</b></p></div>`
+delprdo.appendChild  (div)
   
-  let delprdo = document.querySelector("div#deleteproduct")
-  delprdo.textContent=""
-  delprdo.classList ="d-flex"
-  json.forEach(element => {console.log("ciao")
-  let div = document.createElement("div")
-  div.classList ="col-3"
+});}
   
-  div.innerHTML=`<div><img width ="80px"src="${element.imageUrl}"><p>${element.name} - id = <b> ${element._id}</b></p></div>`
-  delprdo.appendChild  (div)
-    
-  });
+  
   
 }
 
